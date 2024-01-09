@@ -57,7 +57,7 @@
   }
 
   .card:hover {
-    background: url(/images/grass.jpg);
+    background: url(images/grass.jpg);
     background-position: 30%;
     background-size: cover;
   }
