@@ -1,0 +1,103 @@
+
+  @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+  * {
+    box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #292929ff;
+  }
+
+  .wrapper {
+    font-family: "Comic Neue", cursive;
+    position: relative;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-block: 5rem;
+  }
+
+  .wrapper .card {
+    transition: 1200ms;
+    position: relative;
+    width: 150px;
+    height: 200px;
+    background: url(images/grass.jpg);
+    transition: all 500ms ease-in-out;
+    background-position: 0  ;
+    background-size: cover;
+    border-bottom: 1px solid var(--color);
+    border-radius: 0.5em;
+    box-shadow: var(--color) 0px  1px 7px;
+  }
+
+  .card .card__image__container {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+  }
+
+  .card .card__image__container img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 500ms;
+    border-radius: 0.45em;
+  }
+
+  .card:hover {
+    background: url(/images/grass.jpg);
+    background-position: 30%;
+    background-size: cover;
+  }
+  .card:hover .card__image__container img {
+    opacity: 0;
+  }
+
+  .wrapper .card .hovered {
+    position: absolute;
+    z-index: 10;
+    transition: 500ms ease-in-out;
+    transform: translateY(0);
+    opacity: 0;
+    transition-delay: 200ms;
+  }
+
+  .wrapper .card:hover .hovered {
+    transform: translateY(-25%) translateX(-20%);
+    opacity: 1;
+    filter: drop-shadow(0px 0px 0px 4px #000000);
+  }
+
+  h2 {
+    position: absolute;
+    bottom: 10px;
+
+    font-size: 1.7em;
+    transform: translateX(0);
+    color: var(--color);
+
+    text-transform: uppercase;
+    background: rgba(23, 23, 23, 0.7);
+    transition: 500ms ease-in-out;
+    transform-origin: bottom;
+    padding: 0px 10px;
+    opacity: 0;
+    transition-delay: 400ms;
+  }
+
+  .wrapper .card:hover h2 {
+    transform: scaleY(1) translateX(-15px);
+    opacity: 1;
+  }
